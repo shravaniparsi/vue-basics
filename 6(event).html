@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <button v-on:click="increase" >click</button>
+            <p>{{counter}}</p>
+            <p v-on:mousemove="update">co-ordinates :{{x}}/{{y}}</p>
+          </div>
+          <script>
+              var app = new Vue({
+            el: '#app',
+            data: {
+                counter:0,
+                x:0,
+                y:0
+                },
+            methods:{
+                increase:function(){
+                    this.counter=this.counter+1;
+                },
+                update:function(){
+                    this.x=event.clientX;
+                    this.y=event.clientY;
+                }
+            }
+            });
+          </script>
+    </body>
+</html>
